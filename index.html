@@ -1,3 +1,5 @@
+--- START OF FILE index.html ---
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,7 +41,6 @@
             opacity: 0.8;
             z-index: 10;
         }
-        /* UPDATED: 2x2 Grid for Header Numbers */
         .header-number-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -65,7 +66,6 @@
 
         const FIXED_QUADRANTS = true;
 
-        // UPDATED: Now arrays of numbers for 2x2 grid rendering
         const QUADRANT_NUMBERS = [
             [1, 2, 4, 5], // TL
             [2, 3, 5, 6], // TR
@@ -98,10 +98,42 @@
             },
             {
                 id: 3, title: "Quarry Query", titleIcon: "🏛️", centerWord: "STONE",
-                solutions: [["BIRDIE","MARBLE","GRANITE","SEED","STONE","SLATE","PIT","BROWN","TAUPE"]],
-                allWords: ["BIRDIE","MARBLE","GRANITE","SEED","SLATE","PIT","BROWN","TAUPE"],
-                quadrantClues: [{ clue: "SPORTS", words: ["BIRDIE","MARBLE","SEED","STONE"], icon: "🏟️" }, { clue: "MASONRY", words: ["MARBLE","GRANITE","SLATE","STONE"], icon: "🏛️" }, { clue: "KITCHEN", words: ["SEED","STONE","PIT","BROWN"], icon: "🍳" }, { clue: "COLORS", words: ["SLATE","STONE","BROWN","TAUPE"], icon: "🎨" }],
-                explanations: { "STONE": { "SPORTS": "Game piece", "MASONRY": "Building material", "KITCHEN": "Remove pit", "COLORS": "Color" }, "BIRDIE": "Score of one under par in golf", "MARBLE": { "SPORTS": "Game piece", "MASONRY": "Type of stone" }, "GRANITE": "Type of building stone", "SEED": { "SPORTS": "Tournament ranking", "KITCHEN": "To remove seeds from fruit" }, "SLATE": { "MASONRY": "Type of building stone", "COLORS": "A color" }, "PIT": "To remove a pit from fruit", "BROWN": { "KITCHEN": "To cook until brown", "COLORS": "A color" }, "TAUPE": "A brownish-gray color" }
+    solutions: [["BIRDIE","MARBLE","GRANITE","SEED","STONE","SLATE","PIT","BROWN","TAUPE"]],
+    allWords: ["BIRDIE","MARBLE","GRANITE","SEED","SLATE","PIT","BROWN","TAUPE"],
+    quadrantClues: [
+        { clue: "SPORTS", words: ["BIRDIE","MARBLE","SEED","STONE"], icon: "🏟️" },
+        { clue: "MASONRY", words: ["MARBLE","GRANITE","SLATE","STONE"], icon: "🏛️" },
+        { clue: "KITCHEN", words: ["SEED","STONE","PIT","BROWN"], icon: "🍳" },
+        { clue: "COLORS", words: ["SLATE","STONE","BROWN","TAUPE"], icon: "🎨" }
+    ],
+    explanations: { 
+        "STONE": { 
+            "SPORTS": "Game piece used in Curling", 
+            "MASONRY": "Natural building material", 
+            "KITCHEN": "To remove a pit from fruit", 
+            "COLORS": "A neutral, earthy light gray" 
+        }, 
+        "BIRDIE": "Score of one under par in golf", 
+        "MARBLE": { 
+            "SPORTS": "Small glass ball used in games", 
+            "MASONRY": "Polished metamorphic rock" 
+        }, 
+        "GRANITE": "Hard igneous rock used for counters", 
+        "SEED": { 
+            "SPORTS": "Tournament ranking", 
+            "KITCHEN": "To remove seeds from fruit" 
+        }, 
+        "SLATE": { 
+            "MASONRY": "Fine-grained rock used for roofing", 
+            "COLORS": "A cool, muted blue-gray" 
+        }, 
+        "PIT": "The hard central seed of a fruit", 
+        "BROWN": { 
+            "KITCHEN": "To cook food until it darkens", 
+            "COLORS": "A dark, warm earth tone" 
+        }, 
+        "TAUPE": "A dark brownish-gray color" 
+    }
             },
             {
                 id: 4, title: "Start the Presses", titleIcon: "📰", centerWord: "PRESS",
@@ -120,19 +152,19 @@
             {
                 id: 6, title: "Right Turn", titleIcon: "➡️", centerWord: "RIGHT",
                 solutions: [["DIRECTION","LEFT","WING","STRAIGHT","RIGHT","FRANCHISE","JUST","SOUND","CLAIM"]],
-                allWords: ["DIRECTION","LEFT","WING","FRANCHISE","CLAIM","SOUND","JUST","STRAIGHT"],
+                allWords: ["DIRECTION","LEFT","WING","STRAIGHT","FRANCHISE","JUST","SOUND","CLAIM"],
                 quadrantClues: [
                     { clue: "ORIENTATION", words: ["DIRECTION","LEFT","STRAIGHT","RIGHT"], icon: "🧭" },
-                    { clue: "POLITICS", words: ["WING","LEFT","FRANCHISE","RIGHT"], icon: "🗳️" },
-                    { clue: "BUSINESS", words: ["CLAIM","FRANCHISE","SOUND","RIGHT"], icon: "💼" },
-                    { clue: "CORRECTNESS", words: ["JUST","STRAIGHT","SOUND","RIGHT"], icon: "✅" }
+                    { clue: "POLITICS", words: ["LEFT","WING","RIGHT","FRANCHISE"], icon: "🗳️" },
+                    { clue: "CORRECTNESS", words: ["STRAIGHT","RIGHT","JUST","SOUND"], icon: "✅" },
+                    { clue: "BUSINESS", words: ["RIGHT","FRANCHISE","SOUND","CLAIM"], icon: "💼" }
                 ],
                 explanations: {
                     "RIGHT": { "ORIENTATION": "Direction", "POLITICS": "Conservative political wing", "BUSINESS": "Entitlement", "CORRECTNESS": "Correct" },
                     "DIRECTION": "Orientation or course",
                     "LEFT": { "ORIENTATION": "Direction opposite of right", "POLITICS": "Progressive political grouping" },
                     "WING": "Political faction",
-                    "FRANCHISE": { "POLITICS": "Voting rights", "BUSINESS": "Government-granted right or privilege" },
+                    "FRANCHISE": { "POLITICS": "Voting rights", "BUSINESS": "Licensed chain model" },
                     "CLAIM": "Demand or assertion of a right to something",
                     "SOUND": { "BUSINESS": "Financially solid", "CORRECTNESS": "Logically valid" },
                     "JUST": "Morally right, fair, or proper",
@@ -699,7 +731,6 @@
                                                     <div className="flex items-center gap-2">
                                                         <span className="text-xl">{q.icon}</span>
                                                         <span className="font-bold text-xs leading-tight flex-1">{q.clue}</span>
-                                                        {/* Number Indicator in Header */}
                                                         <div className="header-number-grid">
                                                             <div>{QUADRANT_NUMBERS[i][0]}</div>
                                                             <div>{QUADRANT_NUMBERS[i][1]}</div>
@@ -720,7 +751,6 @@
                         <div className="bg-white rounded-2xl p-4 shadow-2xl relative">
                             <div className="grid grid-cols-3 gap-3 relative">
                                 {(() => {
-                                    // Individual Solved Checks
                                     const sol = puzzle.solutions[0];
                                     const isTLSolved = grid.length > 0 && [0, 1, 3, 4].every(i => grid[i] === sol[i]);
                                     const isTRSolved = grid.length > 0 && [1, 2, 4, 5].every(i => grid[i] === sol[i]);
@@ -784,7 +814,6 @@
                                                       inGreenQuadrant ? 'bg-green-50 border-green-400' :
                                                       'bg-gray-50 border-gray-400 cursor-pointer active:scale-95'}`}>
                                                 
-                                                {/* Cell Number Indicator */}
                                                 <span className={`cell-number ${isCenter ? 'text-green-900' : 'text-gray-600'}`}>{idx + 1}</span>
 
                                                 {isCenter && (
@@ -807,17 +836,13 @@
                             </div>
                         </div>
 
-                        {/* Controls */}
                         <div className="mt-4 flex flex-col gap-2">
-                            {/* Row 1: Game Actions */}
                             <div className="flex gap-2">
                                 <button onClick={undo} disabled={historyIdx <= 0 || solved} className="flex-1 py-3 bg-white/20 rounded-lg text-white font-bold disabled:opacity-30 active:scale-95 transition-transform">Undo</button>
                                 <button onClick={reset} className="flex-1 py-3 bg-white/20 rounded-lg text-white font-bold active:scale-95 transition-transform">Reset</button>
                                 <button onClick={solve} className="flex-1 py-3 bg-white/20 rounded-lg text-white font-bold active:scale-95 transition-transform">Solve</button>
                                 <button onClick={() => setShowHelp(true)} className="flex-1 py-3 bg-blue-500/80 rounded-lg text-white font-bold active:scale-95 transition-transform">Help</button>
                             </div>
-                            
-                            {/* Row 2: Navigation */}
                             <div className="flex gap-2">
                                 <button onClick={() => setPuzzleIdx(Math.max(0, puzzleIdx - 1))} disabled={puzzleIdx === 0} className="flex-1 py-3 bg-slate-700 rounded-lg text-white font-bold disabled:opacity-30 active:scale-95 transition-transform">← Prev</button>
                                 <button onClick={() => setShowGallery(true)} className="flex-1 py-3 bg-slate-700 rounded-lg text-white font-bold active:scale-95 transition-transform">Gallery</button>
@@ -825,7 +850,6 @@
                             </div>
                         </div>
 
-                        {/* Gallery Modal */}
                         {showGallery && (
                             <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50" onClick={() => setShowGallery(false)}>
                                 <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto p-6" onClick={e => e.stopPropagation()}>
